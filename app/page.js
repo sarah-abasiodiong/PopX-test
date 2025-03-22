@@ -8,12 +8,7 @@ export default function Home() {
   const router = useRouter();
   const currentUser = useUserStore((state) => state.currentUser);
 
-  useEffect(() => {
-    if (currentUser) {
-      router.push("/profile");
-    }
-  }, [currentUser, router]);
-
+ 
   return (
     <div className="flex flex-col items-center justify-end min-h-screen bg-gray-100">
       <div className="w-full max-w-md p-8 space-y-4 h-screen bg-white rounded-xl shadow-md flex flex-col justify-end">

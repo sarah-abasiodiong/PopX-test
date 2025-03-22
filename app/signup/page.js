@@ -22,11 +22,6 @@ export default function Signup() {
 
   const [showPassword, setShowPassword] = useState(false);
 
-  useEffect(() => {
-    if (currentUser) {
-      router.push("/profile");
-    }
-  }, [currentUser, router]);
 
   const onSubmit = (data) => {
     const existingUser = getUserByEmail(data.email);

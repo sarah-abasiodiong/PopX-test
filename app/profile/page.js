@@ -10,21 +10,8 @@ export default function Profile() {
   const currentUser = useUserStore((state) => state.currentUser);
   const logout = useUserStore((state) => state.logout);
 
-  useEffect(() => {
-    if (!currentUser) {
-      
-      router.prefetch("/login");
-    }
-  }, [currentUser, router]);
 
-  const handleLogout = () => {
-    logout();
-    toast.info("Logged out successfully");
-    setTimeout(() => {
-      router.push("/login");
-    }, 2000); 
-  };
-
+  
   if (!currentUser) {
     return <div>Loading...</div>;
   }
@@ -64,14 +51,7 @@ export default function Profile() {
           </p>
         </div>
 
-        <div className="pt-4 mx-8">
-          <button
-            onClick={handleLogout}
-            className="w-full py-3 text-white cursor-pointer bg-red-500 rounded-md hover:bg-red-600"
-          >
-            Logout
-          </button>
-        </div>
+       
       </div>
     </div>
   );

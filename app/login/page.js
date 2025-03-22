@@ -24,11 +24,7 @@ export default function Login() {
 
   const [showPassword, setShowPassword] = useState(false); 
 
-  useEffect(() => {
-    if (currentUser) {
-      router.push("/profile");
-    }
-  }, [currentUser, router]);
+  
 
   const onSubmit = (data) => {
     const userExists = getUserByEmail(data.email);
